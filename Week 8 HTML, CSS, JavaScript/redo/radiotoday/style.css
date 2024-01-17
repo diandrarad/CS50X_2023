@@ -1,0 +1,33 @@
+/* Change color of navbar background */
+.navbar-custom {
+    background-color: #555;
+}
+
+/* Change color of navbar links */
+.navbar-custom .navbar-nav .nav-link {
+    color: #fff;
+}
+
+/* Add background color and padding to service boxes */
+.service-box {
+    background-color: #f7f7f7;
+    padding: 20px;
+}
+
+/* Style the call-to-action button */
+.cta-btn {
+    background-color: #e31b23;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Add custom styles to the border */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}

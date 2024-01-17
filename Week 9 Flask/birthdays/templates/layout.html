@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/minecraft-icons/512/Cake.png">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	    <title>{% block title %}Birthdays{% endblock %}</title>
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash {{ category }} show">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+                <script>
+                    setTimeout(() => {
+                        document.querySelector('.flash').classList.add('hide-flash');
+                    }, 3000);
+                </script>
+            {% endif %}
+        {% endwith %}
+
+
+        {% block body %}{% endblock %}
+    </body>
+</html>

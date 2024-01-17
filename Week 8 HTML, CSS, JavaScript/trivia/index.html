@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // function to check multiple choice answer
+            function checkMultipleChoiceAnswer(correctAnswer, buttonClicked) {
+                // disable all buttons after a button is clicked
+                var buttons = document.getElementsByClassName("btn");
+                for (var i = 0; i < buttons.length; i++) {
+                    buttons[i].disabled = true;
+                }
+                if (buttonClicked.textContent === correctAnswer) {
+                    // if the correct button is clicked, turn button green and display "Correct!"
+                    buttonClicked.style.backgroundColor = "green";
+                    var resultMessage = document.createElement("p");
+                    resultMessage.textContent = "Correct!";
+                    resultMessage.style.color = "green";
+                    buttonClicked.parentNode.appendChild(resultMessage);
+                } else {
+                    // if an incorrect button is clicked, turn button red and display "Incorrect"
+                    buttonClicked.style.backgroundColor = "red";
+                    var resultMessage = document.createElement("p");
+                    resultMessage.textContent = "Incorrect";
+                    resultMessage.style.color = "red";
+                    buttonClicked.parentNode.appendChild(resultMessage);
+                }
+            }
+
+            // function to check free response answer
+            function checkFreeResponseAnswer(correctAnswer, inputField) {
+                // disable input field and confirm button after confirm button is clicked
+                inputField.disabled = true;
+                var confirmButton = document.getElementById("confirm-button");
+                confirmButton.disabled = true;
+
+                if (inputField.value === correctAnswer) {
+                    // if the correct answer is typed, turn input field green and display "Correct!"
+                    inputField.style.backgroundColor = "green";
+                    var resultMessage = document.createElement("p");
+                    resultMessage.textContent = "Correct!";
+                    resultMessage.style.color = "green";
+                    inputField.parentNode.appendChild(resultMessage);
+                } else {
+                    // if an incorrect answer is typed, turn input field red and display "Incorrect"
+                    inputField.style.backgroundColor = "red";
+                    var resultMessage = document.createElement("p");
+                    resultMessage.textContent = "Incorrect";
+                    resultMessage.style.color = "red";
+                    inputField.parentNode.appendChild(resultMessage);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What is the scientific study of the motion of a solid object in the air called?</h3>
+                <div class="button-container">
+                    <button class="btn" onclick="checkMultipleChoiceAnswer('Aerodynamics', this)">Aeronautics</button>
+                    <button class="btn" onclick="checkMultipleChoiceAnswer('Aerodynamics', this)">Aerodynamics</button>
+                    <button class="btn" onclick="checkMultipleChoiceAnswer('Aerodynamics', this)">Aviation</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>Which gas makes up the largest part of air?</h3>
+                <div class="input-container">
+                    <input type="text" id="free-response-input">
+                    <button id="confirm-button" onclick="checkFreeResponseAnswer('nitrogen', document.getElementById('free-response-input'))">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

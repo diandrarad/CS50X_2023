@@ -1,0 +1,143 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+header {
+    background: url(https://i.pinimg.com/564x/7b/33/25/7b3325ea6383f5a94fe4b90444333b52.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+
+.cropped-img {
+    height: 110px;
+    object-fit: cover;
+  }
+
+.card {
+    transition: all 0.3s ease-in-out;
+  }
+
+.card:hover {
+    transform: scale(1.01);
+  }
+
+.card:active {
+    transform: scale(0.99);
+    box-shadow: none;
+  }
+
+
+/* Category grid */
+
+.image-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	/* grid-template-rows: repeat(3, 1fr); */
+	grid-gap: 1.25em;
+	margin-top: 1.875em;
+}
+
+.image-card {
+        background-color: #fff;
+        color: #fff;
+        padding: 0;
+        box-shadow: 0 0 0.3125em rgba(0, 0, 0, 0.3);
+}
+
+.image-card:hover {
+    transform: scale(1.003);
+    transition: transform 0.25s;
+}
+
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+
+/* Button Styles */
+
+button {
+    display: inline-block;
+    background-color: #477bff;
+    color: #fff;
+    border: none;
+    border-radius: 0.25em;
+    padding: 0.3125em 0.625em;
+    font-size: 1.125em;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Raleway', sans-serif;
+}
+
+button:hover {
+    background-color: #2e6bff;
+}
+
+/* Footer Styles */
+
+footer {
+    color: #333;
+    padding: 1em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+footer p {
+    font-size: 1em;
+}
+.navbar {
+    background: var(--bs-body-bg);
+}
+
+/* Media Queries
+        z-index: -1;
+    body {
+        overflow-x: hidden !important;
+    }*/
+
+@media (max-width: 767px) {
+    .navbar-toggler {
+        margin-start: 10px !important;
+        right: 0 !important;
+        z-index: 1;
+    }
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 200px;
+        height: 100%;
+        overflow-y: auto;
+        padding-top: 10px;
+        padding-left: 10px;
+        background: white !important;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        margin-left: -90px !important;
+    }
+    p {
+        margin-right: 50px !important;
+        margin-left: -90px !important;
+    }
+    .card {
+        margin-right: 50px !important;
+    }
+    main{
+        margin-left: 30px !important;
+    }
+}
